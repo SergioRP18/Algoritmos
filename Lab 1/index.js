@@ -1,7 +1,7 @@
 import students from "./data/dataStudents.js";
-import { util } from "./utils/renderStudents.js";
+import util from "./utils/renderStudents.js";
 import orderNames  from "./utils/orderByName.js";
-import { calculateGrades } from "./utils/calculateMeanGrade.js";
+import calculateGrades from "./utils/calculateMeanGrade.js";
 import filterGrades from "./utils/filterHighGrade.js";
 
 

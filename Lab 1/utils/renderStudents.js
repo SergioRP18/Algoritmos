@@ -1,4 +1,4 @@
-export const util = ({ id, name, age, grade, course }) => {
+const util = ({ id, name, age, grade, course }) => {
 
     const container = document.createElement("card");
     container.classList.add("student-card");
@@ -23,3 +23,5 @@ export const util = ({ id, name, age, grade, course }) => {
 
     return container;
 };
+
+export default util;
