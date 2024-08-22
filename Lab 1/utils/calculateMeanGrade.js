@@ -1,7 +1,9 @@
 const calculateGrades = (students) => {
-    const result = students.reduce((accumulator, grade) => accumulator + grade, 0);
-    const average = result / calculateGrades.length;
-        return average;
+    if (students.length === 0) return 0;
+
+    const totalGrades = students.reduce((accumulator, student) => accumulator + student.grade, 0);
+    const average = totalGrades / students.length;
+    return average;
 };
 
 export default calculateGrades;

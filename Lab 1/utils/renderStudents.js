@@ -9,11 +9,11 @@ const util = ({ id, name, age, grade, course }) => {
     const h2Grade = document.createElement("h2");
     const h3Course = document.createElement("h3");
 
-    h1.textContent = id;
-    h2Name.textContent = name;
-    h2Age.textContent = age;
-    h2Grade.textContent = grade; 
-    h3Course.textContent = course;
+    h1.textContent =  "ID: " + id;
+    h2Name.textContent = "Nombre: " + name;
+    h2Age.textContent = "Edad: " + age;
+    h2Grade.textContent = "Notas: " + grade; 
+    h3Course.textContent = "Curso: " + course;
 
     container.appendChild(h1);
     container.appendChild(h2Name);
