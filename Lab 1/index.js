@@ -3,6 +3,7 @@ import util from "./utils/renderStudents.js";
 import orderNames  from "./utils/orderByName.js";
 import calculateGrades from "./utils/calculateMeanGrade.js";
 import filterGrades from "./utils/filterHighGrade.js";
+import organaizeByGroupCourse from "./utils/organizeByCourse.js";
 
 
 const container = document.querySelector(".app-gestor");
@@ -13,3 +14,6 @@ orderNames(students).forEach((student) => {
     container.appendChild(studentCard);
 });
 
+calculateGrades();
+filterGrades();
+organaizeByGroupCourse();
