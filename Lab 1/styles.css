@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-gestor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.student-card{
+    width: 200px;
+    background-color: bisque;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0px;
+}
+
+.student-card h1 {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 600px;
+    color: brown;
+}
+
+.student-card h2 {
+    margin: 0px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+.student-card h3 {
+    margin: 0px;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 200px;
+    color: rgb(19, 74, 255);
+    font-style: italic;
+}
