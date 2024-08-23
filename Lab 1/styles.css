@@ -6,6 +6,7 @@
 
 .app-gestor{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
@@ -42,4 +43,17 @@
     font-weight: 200px;
     color: rgb(19, 74, 255);
     font-style: italic;
+}
+
+h4{
+    color: red;
+}
+
+ul{
+    padding: 10px;
+    gap: 20px;
+}
+
+li{
+    color: ;
 }

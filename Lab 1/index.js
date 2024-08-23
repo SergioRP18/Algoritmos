@@ -1,8 +1,9 @@
 import students from "./data/dataStudents.js";
-import util from "./utils/renderStudents.js";
+import {util} from "./utils/renderStudents.js";
 import orderNames  from "./utils/orderByName.js";
 import filterGrades from "./utils/filterHighGrade.js";
 import calculateGrades from "./utils/calculateMeanGrade.js";
+import { groupStudentsByCourse} from "./utils/organizeByCourse.js";
 
 //Esta funcion ordena los nombres de los estudiantes
 const sortedStudents = orderNames(students);
@@ -31,7 +32,7 @@ const renderStudentGrades = (students) => {
     students.forEach(student => {
         const studentElement = document.createElement('li');
         studentElement.innerHTML = `
-        <p>Nombre: ${student.name}</p>
+        <h4>Nombre: ${student.name}</h4>
         <p>Nota: ${student.grade}</p>
         `;
         list.appendChild(studentElement);
@@ -42,7 +43,7 @@ const renderStudentGrades = (students) => {
 
 //Esta funcion calcula la nota de los estudiantes y saca el promedio
 const averageGrade = calculateGrades(students);
-const renderStudentCalculateGrades = (averageGrade,students) => {
+const renderStudentCalculateGrades = (averageGrade) => {
     const app = document.querySelector(".app-gestor");
     const averageElement = document.createElement('div');
     averageElement.className = 'average-grade';
@@ -54,20 +55,11 @@ const renderStudentCalculateGrades = (averageGrade,students) => {
 
 
 //Esta funcion organiza a los estudiantes por curso
+const groupedStudents = groupStudentsByCourse(students);
+util(groupedStudents);
 
-
-// Renderiza los nombres ordenados en el DOM
+// Renderiza en el DOM
 renderStudentNames(sortedStudents);
 renderStudentGrades(filterGradeStudents);
 renderStudentCalculateGrades(averageGrade);
-
-
-
-const container = document.querySelector(".app-gestor");
-
-orderNames(students).forEach((student) => {
-    console.log(students)
-    const studentCard = util(student);
-    container.appendChild(studentCard);
-});
 
