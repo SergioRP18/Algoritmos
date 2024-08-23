@@ -5,10 +5,11 @@ import filterGrades from "./utils/filterHighGrade.js";
 import calculateGrades from "./utils/calculateMeanGrade.js";
 import { groupStudentsByCourse} from "./utils/organizeByCourse.js";
 
+const app = document.querySelector(".app-gestor");
 //Esta funcion ordena los nombres de los estudiantes
 const sortedStudents = orderNames(students);
 const renderStudentNames = (students) => {
-    const app = document.querySelector(".app-gestor");
+    
     const list = document.createElement('ul')
 
     students.forEach(student => {
@@ -25,7 +26,6 @@ const renderStudentNames = (students) => {
 //Esta funcion filtra a los estudiantes de acuerdo a la nota
 const filterGradeStudents = filterGrades(students);
 const renderStudentGrades = (students) => {
-    const app = document.querySelector(".app-gestor");
     const list = document.createElement('ul')
 
     students.forEach(student => {
@@ -43,7 +43,6 @@ const renderStudentGrades = (students) => {
 //Esta funcion calcula la nota de los estudiantes y saca el promedio
 const averageGrade = calculateGrades(students);
 const renderStudentCalculateGrades = (averageGrade) => {
-    const app = document.querySelector(".app-gestor");
     const averageElement = document.createElement('div');
     averageElement.className = 'average-grade';
     averageElement.innerHTML = `
@@ -58,9 +57,9 @@ const groupedStudents = groupStudentsByCourse(students);
 for(const course in groupedStudents){
     let students = groupedStudents [course];
     students.forEach(student =>{
-        const mainContainer = document.querySelector(".app-gestor");
+        
         const studentCard = util(student);
-        mainContainer.appendChild(studentCard);
+        app.appendChild(studentCard);
     });
 }
 

@@ -46,14 +46,14 @@ const students = [
         name: "Luis",
         age: 17,
         grade: 89,
-        course: "Ética",
+        course: "Matemáticas",
     },  
     {
         id: 8,
         name: "Camilo",
         age: 16,
         grade: 95,
-        course: "Biología",
+        course: "Ciencias",
     },    
 ];
 
