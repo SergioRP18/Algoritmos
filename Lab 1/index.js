@@ -48,13 +48,16 @@ const renderStudentCalculateGrades = (averageGrade) => {
     const averageElement = document.createElement('div');
     averageElement.className = 'average-grade';
     averageElement.innerHTML = `
-        <h3>Promedio de Calificaciones: ${averageGrade.toFixed(2)}</h3>
+        <h3>Promedio de Calificaciones: ${averageGrade}</h3>
     `;
     app.appendChild(averageElement);
 };
 
 
 //Esta funcion organiza a los estudiantes por curso
+for(const course in students){
+    console.log(`${course}: ${students[course]}`)
+}
 const groupedStudents = groupStudentsByCourse(students);
 util(groupedStudents);
 
