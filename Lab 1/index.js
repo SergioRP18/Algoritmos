@@ -9,7 +9,6 @@ import { groupStudentsByCourse} from "./utils/organizeByCourse.js";
 const sortedStudents = orderNames(students);
 const renderStudentNames = (students) => {
     const app = document.querySelector(".app-gestor");
-    app.innerHTML = '';
     const list = document.createElement('ul')
 
     students.forEach(student => {
@@ -55,11 +54,16 @@ const renderStudentCalculateGrades = (averageGrade) => {
 
 
 //Esta funcion organiza a los estudiantes por curso
-for(const course in students){
-    console.log(`${course}: ${students[course]}`)
-}
 const groupedStudents = groupStudentsByCourse(students);
-util(groupedStudents);
+for(const course in groupedStudents){
+    let students = groupedStudents [course];
+    students.forEach(student =>{
+        const mainContainer = document.querySelector(".app-gestor");
+        const studentCard = util(student);
+        mainContainer.appendChild(studentCard);
+    });
+}
+
 
 // Renderiza en el DOM
 renderStudentNames(sortedStudents);
